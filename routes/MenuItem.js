@@ -20,12 +20,12 @@ router.post("/",async(req,res)=>{
 router.get("/",async(req,res)=>{
     try{
 
-        const alldata =  await MenuItem.find({});
+        const alldata = await MenuItem.find({});
         res.status(200).json(alldata);
 
 
     }catch(err){
-        res.status(500).json({msg:"Internla serve error"});
+        res.status(500).json({msg:"Internal menu item"});
     }
 });
 
