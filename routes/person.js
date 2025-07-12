@@ -9,9 +9,10 @@ const router=express.Router();
 router.post("/", async (req, res) => {
   try {
     const data = req.body;
+   
     const newPerson = new Person(data);
     const savedPerson = await newPerson.save();
-    console.log(savedPerson);
+  
     res.status(200).json({ savedPerson });
   } catch (err) {
     console.log(err);
