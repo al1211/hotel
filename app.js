@@ -5,6 +5,7 @@ const MenuRoutes=require("./routes/MenuItem")
 const PersonRoutes=require('./routes/person');
 
 ConnectDb();
+const PORT=process.env.PORT || 8080;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -12,6 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/menu',MenuRoutes);
 app.use("/person",PersonRoutes);
 
-app.listen(3000, () => {
-  console.log("server is running");
+
+app.listen(PORT, () => {
+  console.log(` ${PORT} server is running`);
 });
